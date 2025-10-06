@@ -62,11 +62,19 @@ from re import match
 # scope_check(20)
 
 # User inputs
+
+
 calculation_to_units =  24
 units = "hours"
-def days_to_units(days, units):
-    print(f"{days} days are {days * calculation_to_units} {units}")
-    print("All fine")
+def days_to_units(days):
+    return f"{days} days are {days * calculation_to_units} {units}"
 
-user_input = input("Enter number of days and will convert it to hours:\n")
-print(user_input)
+user_input = input("Enter number of days and will convert it to hours:\n") # inputs allways interpreted as string
+
+user_input_number = int(user_input) # so cast it into number here
+
+my_var = days_to_units(user_input_number)
+
+print(my_var)
+
+
