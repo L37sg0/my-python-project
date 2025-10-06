@@ -34,15 +34,29 @@ from re import match
 # print(f"30 days are {30 * calculation_to_units} {unit}")
 # print(f"40 days are {40 * calculation_to_units} {unit}")
 
-to_minutes = 24 * 60
-to_seconds = to_minutes * 60
-to_hours = to_minutes/24
-calculation_to_units =  to_hours
-unit = "hours"
+# to_minutes = 24 * 60
+# to_seconds = to_minutes * 60
+# to_hours = to_minutes/60
+# calculation_to_units =  to_hours
+units = "hours"
+#
+# def days_to_units(days, units):
+#     # calculation_to_units =
+#     print(f"{days} days are {days * calculation_to_units} {units}")
+#     print("All fine")
+#
+# days_to_units(35,"hours")
+# days_to_units(40,"hours")
+# days_to_units(50,"hours")
+# days_to_units(5,"hours")
 
-def days_to_units(days, unit):
-    # calculation_to_units =
-    print(f"{days} days are {days * calculation_to_units} {unit}")
-    print("All fine")
+# Scopes
+# A variable is only available from inside the region it is created
 
-days_to_units(20,"hours")
+def scope_check(num_of_days):
+    my_var = "Random var inside function"
+    print(my_var) # internal variable defined inside function
+    print(num_of_days) # internal variable passed as a parameter
+    print(units) # global scope variable
+
+scope_check(20)
