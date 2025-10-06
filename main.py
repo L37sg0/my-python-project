@@ -37,8 +37,8 @@ from re import match
 # to_minutes = 24 * 60
 # to_seconds = to_minutes * 60
 # to_hours = to_minutes/60
-# calculation_to_units =  to_hours
-units = "hours"
+# # calculation_to_units =  to_hours
+# units = "hours"
 #
 # def days_to_units(days, units):
 #     # calculation_to_units =
@@ -52,11 +52,21 @@ units = "hours"
 
 # Scopes
 # A variable is only available from inside the region it is created
+#
+# def scope_check(num_of_days):
+#     my_var = "Random var inside function"
+#     print(my_var) # internal variable defined inside function
+#     print(num_of_days) # internal variable passed as a parameter
+#     print(units) # global scope variable
+#
+# scope_check(20)
 
-def scope_check(num_of_days):
-    my_var = "Random var inside function"
-    print(my_var) # internal variable defined inside function
-    print(num_of_days) # internal variable passed as a parameter
-    print(units) # global scope variable
+# User inputs
+calculation_to_units =  24
+units = "hours"
+def days_to_units(days, units):
+    print(f"{days} days are {days * calculation_to_units} {units}")
+    print("All fine")
 
-scope_check(20)
+user_input = input("Enter number of days and will convert it to hours:\n")
+print(user_input)
