@@ -64,10 +64,37 @@ from re import match
 # User inputs
 
 
+# calculation_to_units =  24
+# units = "hours"
+# def days_to_units(days):
+#     return f"{days} days are {days * calculation_to_units} {units}"
+#
+# user_input = input("Enter number of days and will convert it to hours:\n") # inputs allways interpreted as string
+#
+# user_input_number = int(user_input) # so cast it into number here
+#
+# my_var = days_to_units(user_input_number)
+#
+# print(my_var)
+
+
+# if/else conditions and boolean values
+# Validate User inputs We want to avoid or handle values:
+# - which doesn't make sense
+# - could crash our program
+# - could be security risk
+
 calculation_to_units =  24
 units = "hours"
 def days_to_units(days):
-    return f"{days} days are {days * calculation_to_units} {units}"
+    condition_check = days > 0
+    print(type(condition_check))
+    if condition_check: # use comparison operator to check if number is positive or not
+        return f"{days} days are {days * calculation_to_units} {units}"
+    elif days == 0:
+        return "you've entered 0 so no conversion for you!"
+    else:
+        return "you've entered negative value so no conversion for you!"
 
 user_input = input("Enter number of days and will convert it to hours:\n") # inputs allways interpreted as string
 
@@ -77,4 +104,6 @@ my_var = days_to_units(user_input_number)
 
 print(my_var)
 
-
+print(type("this is string")) # str
+print(type(10)) # int
+print(type(1.25)) # float
