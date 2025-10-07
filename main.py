@@ -98,12 +98,15 @@ def days_to_units(days):
 
 user_input = input("Enter number of days and will convert it to hours:\n") # inputs allways interpreted as string
 
-user_input_number = int(user_input) # so cast it into number here
-
-my_var = days_to_units(user_input_number)
-
-print(my_var)
+# More input validations
+if user_input.isdigit():
+    user_input_number = int(user_input) # so cast it into number here
+    my_var = days_to_units(user_input_number)
+    print(my_var)
+else:
+    print("your input is not valid number, don't break my program!")
 
 print(type("this is string")) # str
 print(type(10)) # int
 print(type(1.25)) # float
+
