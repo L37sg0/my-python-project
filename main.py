@@ -148,13 +148,37 @@ from re import match
 # validate_and_execute()
 
 # Error handling with try/catch
-calculation_to_units =  24
+# calculation_to_units =  24
+# units = "hours"
+# def days_to_units(days):
+#     return f"{days} days are {days * calculation_to_units} {units}"
+#
+#
+# user_input = input("Enter number of days and will convert it to hours:\n") # inputs allways interpreted as string
+#
+# def validate_and_execute():
+#     try:
+#         user_input_number = int(user_input)
+#         condition_check = user_input_number > 0
+#         if condition_check:
+#             my_var = days_to_units(user_input_number)
+#             print(my_var)
+#         elif user_input_number == 0:
+#             print("you've entered 0 so no conversion for you!")
+#         else:
+#             print("you've entered negative number, so no conversion for you!")
+#
+#     except ValueError:
+#         print("your input is not valid number, don't break my program!")
+#
+# validate_and_execute()
+
+# Looping
+calculation_to_units = 24
 units = "hours"
+
 def days_to_units(days):
     return f"{days} days are {days * calculation_to_units} {units}"
-
-
-user_input = input("Enter number of days and will convert it to hours:\n") # inputs allways interpreted as string
 
 def validate_and_execute():
     try:
@@ -170,5 +194,13 @@ def validate_and_execute():
 
     except ValueError:
         print("your input is not valid number, don't break my program!")
+# while loops
 
-validate_and_execute()
+# while True:
+#     user_input = input("Enter number of days and will convert it to hours:\n")  # inputs allways interpreted as string
+#     validate_and_execute()
+
+user_input = ""
+while user_input != "exit": # allow user exit the program
+    user_input = input("Enter number of days and will convert it to hours:\n")  # inputs allways interpreted as string
+    validate_and_execute()
