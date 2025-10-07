@@ -122,6 +122,32 @@ from re import match
 # validate_and_execute()
 
 # Encapsulate input validation
+# calculation_to_units =  24
+# units = "hours"
+# def days_to_units(days):
+#     return f"{days} days are {days * calculation_to_units} {units}"
+#
+#
+# user_input = input("Enter number of days and will convert it to hours:\n") # inputs allways interpreted as string
+#
+# def validate_and_execute():
+# # Nested if/else conditions - not a good practice, but sometimes required
+#     if user_input.isdigit():
+#         user_input_number = int(user_input)
+#         condition_check = user_input_number > 0
+#         if condition_check:
+#             my_var = days_to_units(user_input_number)
+#             print(my_var)
+#         elif user_input_number == 0:
+#             print("you've entered 0 so no conversion for you!")
+#         else:
+#             print("you've entered negative value so no conversion for you!")
+#     else:
+#         print("your input is not valid number, don't break my program!")
+#
+# validate_and_execute()
+
+# Error handling with try/catch
 calculation_to_units =  24
 units = "hours"
 def days_to_units(days):
@@ -131,8 +157,7 @@ def days_to_units(days):
 user_input = input("Enter number of days and will convert it to hours:\n") # inputs allways interpreted as string
 
 def validate_and_execute():
-# Nested if/else conditions - not a good practice, but sometimes required
-    if user_input.isdigit():
+    try:
         user_input_number = int(user_input)
         condition_check = user_input_number > 0
         if condition_check:
@@ -141,8 +166,9 @@ def validate_and_execute():
         elif user_input_number == 0:
             print("you've entered 0 so no conversion for you!")
         else:
-            print("you've entered negative value so no conversion for you!")
-    else:
+            print("you've entered negative number, so no conversion for you!")
+
+    except ValueError:
         print("your input is not valid number, don't break my program!")
 
 validate_and_execute()
