@@ -231,5 +231,5 @@ user_input = ""
 while user_input != "exit": # allow user exit the program
     user_input = input("Enter number of days as a comma-separated list and will convert it to hours:\n")  # inputs allways interpreted as string
     print(user_input.split(", "))
-    for num_of_days_element in user_input.split(", "):
+    for num_of_days_element in user_input.split(", "): # could access elements in list one by one using for loop
         validate_and_execute()
