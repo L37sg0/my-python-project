@@ -206,6 +206,47 @@ from re import match
 #     validate_and_execute()
 
 # Lists and for loops
+# list is data-type in Python for storing multiple elements of data
+# list allows duplicates in data
+# calculation_to_units = 24
+# units = "hours"
+#
+# def days_to_units(days):
+#     return f"{days} days are {days * calculation_to_units} {units}"
+#
+# def validate_and_execute():
+#     try:
+#         user_input_number = int(num_of_days_element)
+#         condition_check = user_input_number > 0
+#         # we want to do conversions only for positive numbers
+#         if condition_check:
+#             my_var = days_to_units(user_input_number)
+#             print(my_var)
+#         elif user_input_number == 0:
+#             print("you've entered 0 so no conversion for you!")
+#         else:
+#             print("you've entered negative number, so no conversion for you!")
+#
+#     except ValueError:
+#         print("your input is not valid number, don't break my program!")
+#
+# user_input = ""
+# while user_input != "exit": # allow user exit the program
+#     user_input = input("Enter number of days as a comma-separated list and will convert it to hours:\n")  # inputs allways interpreted as string
+#     print(user_input.split(", "))
+#     for num_of_days_element in user_input.split(", "): # could access elements in list one by one using for loop
+#         validate_and_execute()
+
+# Comments
+# 1. To give notes in code, if complicated for example
+#  single-line comment
+"""multiple-line comments"""
+
+# Sets
+# another built-in data-type of Python
+# as with lists, used to store multiple items of data
+# DO NOT allow duplicate values
+
 calculation_to_units = 24
 units = "hours"
 
@@ -231,11 +272,13 @@ def validate_and_execute():
 user_input = ""
 while user_input != "exit": # allow user exit the program
     user_input = input("Enter number of days as a comma-separated list and will convert it to hours:\n")  # inputs allways interpreted as string
-    print(user_input.split(", "))
-    for num_of_days_element in user_input.split(", "): # could access elements in list one by one using for loop
+    list_of_days = user_input.split(", ")
+    set_of_days = set(list_of_days) # convert list into set
+
+    print(list_of_days, set_of_days)
+    print(type(list_of_days), type(set_of_days))
+    for num_of_days_element in set_of_days: # convert a list into set
         validate_and_execute()
 
-# Comments
-# 1. To give notes in code, if complicated for example
-#  single-line comment
-"""multiple-line comments"""
+# lists are defined with []
+# sets are defined with {}
