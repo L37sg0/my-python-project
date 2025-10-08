@@ -216,6 +216,7 @@ def validate_and_execute():
     try:
         user_input_number = int(num_of_days_element)
         condition_check = user_input_number > 0
+        # we want to do conversions only for positive numbers
         if condition_check:
             my_var = days_to_units(user_input_number)
             print(my_var)
@@ -233,3 +234,8 @@ while user_input != "exit": # allow user exit the program
     print(user_input.split(", "))
     for num_of_days_element in user_input.split(", "): # could access elements in list one by one using for loop
         validate_and_execute()
+
+# Comments
+# 1. To give notes in code, if complicated for example
+#  single-line comment
+"""multiple-line comments"""
