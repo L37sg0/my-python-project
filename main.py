@@ -282,3 +282,15 @@ while user_input != "exit": # allow user exit the program
 
 # lists are defined with []
 # sets are defined with {}
+
+# Standalone Built-in functions
+# print()   Prints to the standard output device
+# input()   Asks user for input
+# set()     Returns a new set
+# int()     Converts a value into an integer number
+# Full list here: https://docs.python.org/3/library/functions.html
+
+# Built-in functions on Data Types
+# - each Data Type has its own built-in functions
+# - which are useful(make sense) only for this specific data type
+print([1,2].remove(2))
