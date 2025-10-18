@@ -4,7 +4,10 @@
 # print(-22) # - integer
 # print(2.99) # float
 # print(2 * 8) # math operations
+from pyexpat.errors import messages
 from re import match
+
+from lists import my_list
 
 # print("20 days are " + str(50) +" minutes") # concatenating str and int
 # print(20*60*24) # math operations
@@ -247,38 +250,38 @@ from re import match
 # as with lists, used to store multiple items of data
 # DO NOT allow duplicate values
 
-calculation_to_units = 24
-units = "hours"
-
-def days_to_units(days):
-    return f"{days} days are {days * calculation_to_units} {units}"
-
-def validate_and_execute():
-    try:
-        user_input_number = int(num_of_days_element)
-        condition_check = user_input_number > 0
-        # we want to do conversions only for positive numbers
-        if condition_check:
-            my_var = days_to_units(user_input_number)
-            print(my_var)
-        elif user_input_number == 0:
-            print("you've entered 0 so no conversion for you!")
-        else:
-            print("you've entered negative number, so no conversion for you!")
-
-    except ValueError:
-        print("your input is not valid number, don't break my program!")
-
-user_input = ""
-while user_input != "exit": # allow user exit the program
-    user_input = input("Enter number of days as a comma-separated list and will convert it to hours:\n")  # inputs allways interpreted as string
-    list_of_days = user_input.split(", ")
-    set_of_days = set(list_of_days) # convert list into set
-
-    print(list_of_days, set_of_days)
-    print(type(list_of_days), type(set_of_days))
-    for num_of_days_element in set_of_days: # convert a list into set
-        validate_and_execute()
+# calculation_to_units = 24
+# units = "hours"
+#
+# def days_to_units(days):
+#     return f"{days} days are {days * calculation_to_units} {units}"
+#
+# def validate_and_execute():
+#     try:
+#         user_input_number = int(num_of_days_element)
+#         condition_check = user_input_number > 0
+#         # we want to do conversions only for positive numbers
+#         if condition_check:
+#             my_var = days_to_units(user_input_number)
+#             print(my_var)
+#         elif user_input_number == 0:
+#             print("you've entered 0 so no conversion for you!")
+#         else:
+#             print("you've entered negative number, so no conversion for you!")
+#
+#     except ValueError:
+#         print("your input is not valid number, don't break my program!")
+#
+# user_input = ""
+# while user_input != "exit": # allow user exit the program
+#     user_input = input("Enter number of days as a comma-separated list and will convert it to hours:\n")  # inputs allways interpreted as string
+#     list_of_days = user_input.split(", ")
+#     set_of_days = set(list_of_days) # convert list into set
+#
+#     print(list_of_days, set_of_days)
+#     print(type(list_of_days), type(set_of_days))
+#     for num_of_days_element in set_of_days: # convert a list into set
+#         validate_and_execute()
 
 # lists are defined with []
 # sets are defined with {}
@@ -293,4 +296,68 @@ while user_input != "exit": # allow user exit the program
 # Built-in functions on Data Types
 # - each Data Type has its own built-in functions
 # - which are useful(make sense) only for this specific data type
-print([1,2].remove(2))
+# print([1,2].remove(2))
+
+# Dictionary data type
+# Are used to store values in key:value pairs
+# Is a collection which do not allow duplicate values
+
+
+def days_to_units(days, conversion_unit):
+    if conversion_unit == "hours":
+        return f"{days} days are {days * 24} {conversion_unit}"
+    elif conversion_unit == "minutes":
+        return f"{days} days are {days * 24 * 60} {conversion_unit}"
+    else:
+        return "unsupported unit"
+
+
+def validate_and_execute():
+    try:
+        user_input_number = int(days_and_unit_dictionary['days'])
+        unit = days_and_unit_dictionary['unit']
+        condition_check = user_input_number > 0
+        # we want to do conversions only for positive numbers
+        if condition_check:
+            my_var = days_to_units(user_input_number, unit)
+            print(my_var)
+        elif user_input_number == 0:
+            print("you've entered 0 so no conversion for you!")
+        else:
+            print("you've entered negative number, so no conversion for you!")
+
+    except ValueError:
+        print("your input is not valid number, don't break my program!")
+
+user_input = ""
+while user_input != "exit": # allow user exit the program
+    user_input = input("Enter number of days and conversion unit column separated\n")
+    days_and_unit = user_input.split(":")
+
+    days_and_unit_dictionary = {
+        "days": days_and_unit[0],
+        "unit": days_and_unit[1]
+    }
+    print(type(days_and_unit_dictionary)) # prints type dict
+    validate_and_execute()
+
+
+# my_list = ["20","30","100"]
+# print(my_list[2])
+# my_dictionary = {"days": 20, "unit": "hours", "message": "all good"}
+# print(my_dictionary['message'])
+
+# Data types learned summary
+# message = 'enter some text' # string str
+# days = 20                   # integer int
+# price = 9.99                # float
+# valid_number = True         # boolean
+# exit_input = False          # boolean
+# list_of_days = [20,40,30,90,20]# list allow duplicate values
+# list_of_month = ["Jan", "Feb"] # also list but with strings
+# set_of_days = {20,45,100}   # set - does not allow duplicate values
+# days_and_unit = {"days":20, "unit":"hours"} # dict a dictionary
+
+# Why so many data types:
+# - Depending on what you want to achieve in your program
+# - pyu need a different data type to achieve exactly that
