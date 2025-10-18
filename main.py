@@ -371,23 +371,30 @@
 # Create module and import statement
 # import helper # import whole module
 # from helper import validate_and_execute, user_input_message # import single functions and variables from module
-from helper import * # import everything from module
-# import helper as h # import module as alias name
-
-user_input = ""
-while user_input != "exit": # allow user exit the program
-    user_input = input(user_input_message)
-    # user_input = input(h.user_input_message) # use module variable with alias
-    days_and_unit = user_input.split(":")
-
-    days_and_unit_dictionary = {
-        "days": days_and_unit[0],
-        "unit": days_and_unit[1]
-    }
-    print(type(days_and_unit_dictionary)) # prints type dict
-    # helper.validate_and_execute(days_and_unit_dictionary) # this is how reference functions from a module when whole module imported
-    validate_and_execute(days_and_unit_dictionary) # regular use when single function imported from module
-    # h.validate_and_execute(days_and_unit_dictionary) # use module functions with alias
+# from helper import * # import everything from module
+# # import helper as h # import module as alias name
+#
+# user_input = ""
+# while user_input != "exit": # allow user exit the program
+#     user_input = input(user_input_message)
+#     # user_input = input(h.user_input_message) # use module variable with alias
+#     days_and_unit = user_input.split(":")
+#
+#     days_and_unit_dictionary = {
+#         "days": days_and_unit[0],
+#         "unit": days_and_unit[1]
+#     }
+#     print(type(days_and_unit_dictionary)) # prints type dict
+#     # helper.validate_and_execute(days_and_unit_dictionary) # this is how reference functions from a module when whole module imported
+#     validate_and_execute(days_and_unit_dictionary) # regular use when single function imported from module
+#     # h.validate_and_execute(days_and_unit_dictionary) # use module functions with alias
 
 # More on Python modules can be found here: https://docs.python.org/3/tutorial/modules.html#
+
 # Built-in module examples
+# import os
+# print(os.name)
+
+import logging
+# logger = logging.getLogger("MAIN")
+# logger.error("Error happened in app")
