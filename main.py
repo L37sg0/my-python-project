@@ -420,3 +420,12 @@ import logging
 # The Python Package Index (PyPI)
 # - pypi is a repository for third-party Python packages
 # - people can publish their packages to this repository
+# - so it becomes available to everyone to use
+# - a large community means, many people are creating useful modules and make them available for others
+
+# pip
+# - pip is a package manager for Python
+# use pip install <PackageName> to install package
+# use pip uninstall <PackageName> to uninstall package
+
+
