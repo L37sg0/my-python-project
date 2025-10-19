@@ -398,3 +398,25 @@
 import logging
 # logger = logging.getLogger("MAIN")
 # logger.error("Error happened in app")
+
+# Built-in vs Third-Party modules
+
+# Python comes only with a set of built-in modules
+# Many more modules out there, which are NOT part of the Python installation
+# You need to install these third-party packages
+# Built-in modules and Packages are most common ones
+# Depending on what application you write, add specific ones
+
+# Where to find these packages ?
+# How to install them ?
+# search in https://pypi.org
+
+# Module vs Package
+# - any Python file is a module
+# - package is a collection of modules
+# - package must include an __init__.py file
+# - __init__.py distinguishes a package from a directory
+
+# The Python Package Index (PyPI)
+# - pypi is a repository for third-party Python packages
+# - people can publish their packages to this repository
