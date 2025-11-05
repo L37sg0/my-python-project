@@ -427,5 +427,3 @@ import logging
 # - pip is a package manager for Python
 # use pip install <PackageName> to install package
 # use pip uninstall <PackageName> to uninstall package
-
-
