@@ -26,3 +26,24 @@
 # "self" Parameter
 # - self is a reference to the current instance of the class
 # - is used to access variables that belong to the class
+
+# Each class is in separate file with <lowercase-class>.py as file-name
+# and class <Class> definition
+
+# Create an object from a class
+from user import User # Import a class
+from post import Post # Import class
+
+user_one = User("em@em.com", "John Wick", "pwd", "Engineer")
+user_one.get_user_info()
+user_one.change_job_title("DevOps trainer")
+user_one.get_user_info()
+
+user_two = User("ab.li@em.com", "Abraham Lincoln", "pwd2", "Construction worker")
+user_two.get_user_info
+
+post1 = Post("on a secret mission today", user_one.name)
+post2 = Post("on a secret mission today", user_two.name)
+
+post1.get_post_info()
+post2.get_post_info()
